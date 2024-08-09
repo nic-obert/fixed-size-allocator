@@ -1,2 +1,3 @@
-# fixed-size-allocator
+# Fixed size allocator
+
 A fixed size allocator implemented in Rust
