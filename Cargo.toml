@@ -9,5 +9,9 @@ authors = ["Nicholas Obert"]
 readme = "README.md"
 homepage = "https://github.com/nic-obert/fixed-size-allocator"
 
+exclude = [
+    "examples"
+]
+
 [dependencies]
 const-assert = "1.0.1"
