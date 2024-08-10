@@ -146,11 +146,8 @@ where
     }
 
 
-    /// Try to allocate a memory block of that fits `T`, where `T` is `S`-sized.
-    pub fn alloc<T>(self: Pin<&mut Self>) -> Option<NonNull<T>>
-    where 
-        Assert<{ mem::size_of::<T>() == S }>: IsTrue
-    {
+    pub unsafe fn alloc_untyped(self: Pin<&mut Self>) -> Option<NonNull<u8>> {
+
         let self_data = unsafe { self.get_unchecked_mut() };
 
         if self_data.total_free() == 0 {
@@ -181,6 +178,17 @@ where
             }
 
             None
+        }
+    }
+
+
+    /// Try to allocate a memory block of that fits `T`, where `T` is `S`-sized.
+    pub fn alloc<T>(self: Pin<&mut Self>) -> Option<NonNull<T>>
+    where 
+        Assert<{ mem::size_of::<T>() == S }>: IsTrue
+    {
+        unsafe {
+            mem::transmute(self.alloc_untyped())
         }
     }
 
