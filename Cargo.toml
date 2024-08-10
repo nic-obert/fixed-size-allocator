@@ -2,6 +2,12 @@
 name = "fixed-size-allocator"
 version = "0.1.0"
 edition = "2021"
+license-file = "LICENSE"
+description = "A fixed-size allocator"
+repository = "https://github.com/nic-obert/fixed-size-allocator"
+authors = ["Nicholas Obert"]
+readme = "README.md"
+homepage = "https://github.com/nic-obert/fixed-size-allocator"
 
 [dependencies]
 const-assert = "1.0.1"
