@@ -6,12 +6,13 @@ Project Description
 
 ### Todo
 
-- [ ] write a good readme  
 
 ### In Progress
 
-- [ ] write more tests  
 
 ### Done ✓
 
+- [x] Add explanatory comments  
+- [x] write a good readme  
+- [x] write more tests  
 
